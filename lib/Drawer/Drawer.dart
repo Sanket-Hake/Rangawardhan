@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../Widgets/more.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -35,22 +38,7 @@ class MainDrawer extends StatelessWidget {
               thickness: 1,
               color: Colors.white,
             ),
-             InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, "/Admin_login");
-              },
-              child: ListTile(
-                leading: Icon(
-                  Icons.admin_panel_settings,
-                  color: Colors.white,
-                ),
-                tileColor: Colors.blue[200],
-                title: Text(
-                  "Admin Login",
-                  style: TextStyle(fontSize: 17, color: Colors.white),
-                ),
-              ),
-            ),
+       
             InkWell(
               onTap: () {
                 Navigator.popAndPushNamed(context, "/About");
@@ -69,7 +57,7 @@ class MainDrawer extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                Navigator.pushNamed(context, "/Events");
+             Navigator.popAndPushNamed(context, "/sponsors");
               },
               child: ListTile(
                 leading: Container(
@@ -82,14 +70,14 @@ class MainDrawer extends StatelessWidget {
                 ),
                 tileColor: Colors.blue[200],
                 title: Text(
-                  "Events",
+                  "Sponsors",
                   style: TextStyle(fontSize: 17, color: Colors.white),
                 ),
               ),
             ),
             InkWell(
               onTap: () {
-                Navigator.pushNamed(context, "/Teams");
+             Navigator.popAndPushNamed(context, "/guest");
               },
               child: ListTile(
                 leading: Container(
@@ -102,27 +90,13 @@ class MainDrawer extends StatelessWidget {
                 ),
                 tileColor: Colors.blue[200],
                 title: Text(
-                  "Our Team",
+                  "Guests",
                   style: TextStyle(fontSize: 17, color: Colors.white),
                 ),
               ),
             ),
-           InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, "/Nmain");
-              },
-              child: ListTile(
-                leading: Icon(
-                  Icons.admin_panel_settings,
-                  color: Colors.white,
-                ),
-                tileColor: Colors.blue[200],
-                title: Text(
-                  "Natyawardhan",
-                  style: TextStyle(fontSize: 17, color: Colors.white),
-                ),
-              ),
-            ),
+          
+
             InkWell(
               onTap: () {
                 Navigator.popAndPushNamed(context, "/Contact_us");
@@ -132,6 +106,19 @@ class MainDrawer extends StatelessWidget {
                 tileColor: Colors.blue[200],
                 title: Text(
                   "Contact Us",
+                  style: TextStyle(fontSize: 17, color: Colors.white),
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.popAndPushNamed(context, "/developer");
+              },
+              child: ListTile(
+                leading: Icon(Icons.call, color: Colors.white),
+                tileColor: Colors.blue[200],
+                title: Text(
+                  "Devloper",
                   style: TextStyle(fontSize: 17, color: Colors.white),
                 ),
               ),

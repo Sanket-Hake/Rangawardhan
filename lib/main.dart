@@ -5,15 +5,22 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:rangawardhan/Drawer/Contact.dart';
 import 'package:rangawardhan/Drawer/Events.dart';
+import 'package:rangawardhan/Widgets/more.dart';
 import 'Admin/adminHome.dart';
 import 'Admin/login.dart';
 import 'Drawer/About.dart';
 import 'Drawer/Team.dart';
+import 'Drawer/developer.dart';
+import 'Drawer/gallery.dart';
 import 'Home/home_page.dart';
-import 'natyawardhan/n_main.dart';
-
+import 'Drawer/n_main.dart';
+import 'package:firebase_core/firebase_core.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  await Firebase.initializeApp();
+ 
+  // LocalNotificationService.initialize();
   runApp(MyApp());
 }
 
@@ -26,9 +33,6 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.playfairDisplayTextTheme(
           Theme.of(context).textTheme,
         ),
-        // textTheme: DevanagariFonts.hindTextTheme(
-        //   Theme.of(context).textTheme,
-        // ),
       ),
       home: AnimatedSplashScreen(
           backgroundColor: Colors.black45,
@@ -38,11 +42,15 @@ class MyApp extends StatelessWidget {
           nextScreen: Home()),
       routes: {
         '/About': (context) => About(),
-        '/Events': (context) => Events(),
+        '/sponsors': (context) => more(Count: 3, extend: 100, name: 'sponsors',),
+        '/guest': (context) => more(Count: 2, extend: 180, name: 'specialGuest',),
+        '/Events': (context) => ranagaEvent(),
         '/Contact_us': (context) => Contact(),
         '/Teams': (context) => Teams(),
         '/Admin_login': (context) => LoginPage(),
         '/Nmain': (context) => NMain(),
+        '/developer': (context) => Developer(),
+        // '/gallery': (context) => gallery(),
       },
     );
   }

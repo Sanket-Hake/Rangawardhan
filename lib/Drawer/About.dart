@@ -64,9 +64,9 @@ class About extends StatelessWidget {
                         child: Text(
                           "About the Committee",
                           style: const TextStyle(
-                              color: Colors.yellow,
+                              color: Colors.orange , 
                               fontWeight: FontWeight.w600,
-                              fontSize: 18),
+                              fontSize: 22),
                         ),
                       ),
                       SizedBox(
@@ -119,7 +119,7 @@ class About extends StatelessWidget {
                                   child: Text(
                                     " H R Mahajani Rd, Matunga",
                                     style: const TextStyle(
-                                        color: Colors.yellow,
+                                        color: Colors.orange ,
                                         fontWeight: FontWeight.w600,
                                         fontSize: 17),
                                   ),
@@ -153,7 +153,7 @@ class About extends StatelessWidget {
                             child: Text(
                               "rangawardhanfest@gmail.com",
                               style: const TextStyle(
-                                  color: Colors.yellow,
+                               color: Colors.orange ,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 17),
                             ),

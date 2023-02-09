@@ -6,18 +6,14 @@ import '../Widgets/grid.dart';
 class Teams extends StatelessWidget {
   Teams({super.key});
 
-  List<String> Images2022_23 = [
-    "assets/Images/team/Saurabh_pawar.jpg",
-    "assets/Images/team/Tejashree_Shinde.jpg",
-  ];
-
-  List<String> Name2022_23 = ["सौरभ पवार", "तेजश्री शिंदे"];
-  List<String> Position2022_23 = [
+  List<String> name2023 = ["सौरभ पवार", "तेजश्री शिंदे"];
+  List<String> image2023 = ["सौरभ पवार.jpg", "तेजश्री शिंदे.jpg"];
+  List<String> position2023 = [
     "Secretary",
     "Secretary",
   ];
 
-  List<String> Name2021_22 = [
+  List<String> name2022 = [
     "आदित्य कुंजीर",
     "दिव्या परदेशी",
     "यश पवार",
@@ -26,8 +22,16 @@ class Teams extends StatelessWidget {
     "दिव्या जाधव",
     "लेण्याद्री साळवे"
   ];
-
-  List<String> position2021_22 = [
+  List<String> image2022 = [
+    "आदित्य कुंजीर.jpg",
+    "दिव्या परदेशी.png",
+    "यश पवार.jpg",
+    "अभयसिंग पाटील.JPG",
+    "प्रहेश चारथळ.jpg",
+    "दिव्या जाधव.jpg",
+    "लेण्याद्री साळवे.jpeg"
+  ];
+  List<String> position2022 = [
     "Secretary",
     "Secretary",
     "Treasurer",
@@ -35,44 +39,6 @@ class Teams extends StatelessWidget {
     "Chief Coordinator",
     "Chief Coordinator",
     "Chief Coordinator",
-  ];
-
-  List<String> Images2021_22 = [
-    "assets/Images/2021/Aditya Kunjir.jpg",
-    "assets/Images/2021/Divya Pardeshi.png",
-    "assets/Images/2021/Yash Pawar.jpg",
-    "assets/Images/2021/Abhay.JPG",
-    "assets/Images/2021/Prahesh.jpg",
-    "assets/Images/2021/Divya_CC.jpg",
-    "assets/Images/2021/Lenyadri_CC.jpeg",
-  ];
-  List<String> position2020 = [
-    "Secretary",
-    "Secretary",
-    "Treasurer",
-    "Treasurer",
-    "Chief Coordinator",
-    "Chief Coordinator",
-    "Chief Coordinator",
-  ];
-
-  List<String> Images2020 = [
-    "assets/Images/2020/sanket.jpg",
-    "assets/Images/2020/nishant.jpg",
-    "assets/Images/2020/dnya.jpg",
-    "assets/Images/2020/ishan.jpg",
-    "assets/Images/2020/prajawal.jpg",
-    "assets/Images/2020/prachi.jpg",
-    "assets/Images/2020/priyanka.jpg"
-  ];
-  List<String> Name2020 = [
-    "संकेत अडसूळ",
-    "निशांत उभारे",
-    "ज्ञानेश फेगडे",
-    "ईशान सोनूर्लेकर",
-    "प्रज्वल चव्हाणके",
-    "प्राची नाईक",
-    "प्रियांका घोरपडे"
   ];
 
   @override
@@ -142,19 +108,23 @@ class Teams extends StatelessWidget {
                       child: Text(
                         "रंगवर्धन २०२२-२३",
                         style: TextStyle(
-                            color:Colors.orange,
+                            color: Colors.orange,
                             fontSize: 28,
                             fontWeight: FontWeight.w700),
                       ),
                     ),
                     Card(
                       color: Color.fromARGB(255, 24, 21, 21),
+                      shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        elevation: 40,
                       child: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Grid(
-                            Images: Images2022_23,
-                            Titles: Name2022_23,
-                            Position: Position2022_23,
+                            Titles: name2023,
+                            Position: position2023,
+                            year: 'team2023',
+                            image_name: image2023 , 
                           )),
                     ),
                     SizedBox(
@@ -170,18 +140,18 @@ class Teams extends StatelessWidget {
                       ),
                     ),
                     Card(
-                      color: Color.fromARGB(255, 24, 21, 21),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30)),
-                      elevation: 40,
-                      child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Grid(
-                            Images: Images2021_22,
-                            Titles: Name2021_22,
-                            Position: position2021_22,
-                          )),
-                    ),
+                        color: Color.fromARGB(255, 24, 21, 21),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        elevation: 40,
+                        child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Grid(
+                            Titles: name2022,
+                            Position: position2022,
+                            year: 'team_2022',
+                            image_name: image2022 , 
+                          ))),
                     SizedBox(
                       height: 10,
                     ),
@@ -195,4 +165,3 @@ class Teams extends StatelessWidget {
     );
   }
 }
-

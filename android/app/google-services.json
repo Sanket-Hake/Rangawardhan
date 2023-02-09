@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1071106677250",
+    "project_id": "rangawardhan-application",
+    "storage_bucket": "rangawardhan-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071106677250:android:8ef2eee5e0a5efa243a51b",
+        "android_client_info": {
+          "package_name": "com.example.rangawardhan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071106677250-vrk94uk58gaabosa9opc6436l2k8pg5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb0MTWPOK3pjTAkuyxtjLpeL7fj7IdZpo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071106677250-vrk94uk58gaabosa9opc6436l2k8pg5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
