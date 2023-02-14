@@ -1,7 +1,9 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import '../Widgets/grid.dart';
+import '../Widgets/team.dart';
+import '../Widgets/appBar.dart';
 
 class Teams extends StatelessWidget {
   Teams({super.key});
@@ -43,123 +45,74 @@ class Teams extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.black,
-        body: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/Images/VJTI_Mumbai.jpeg"),
-                      fit: BoxFit.cover),
-                ),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 20, left: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "रंगवर्धन",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 35,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          height: 100,
-                          child: Center(
-                            child: Image(
-                              image: AssetImage(
-                                "assets/gif/Rangawardhan.gif",
-                              ),
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                        ),
-                        Center(
-                          child: Text(
-                            "  व्ही. जे. टी. आय. चे मराठी मन\nआपलं तन, मन, धन फक्त रंगवर्धन",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            customAppBar(),
+          //       Center(
+          //   child: Text(
+          //     "  व्ही. जे. टी. आय. चे मराठी मन\nआपलं तन, मन, धन फक्त रंगवर्धन",
+          //     style: TextStyle(
+          //       color: Colors.white,
+          //     ),
+          //   ),
+          // ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                 
+                  Center(
+                    child: Text(
+                      "रंगवर्धन २०२२-२३",
+                      style: TextStyle(
+                         fontFamily: "TiroDevanagariSanskrit",
+                          color: Colors.orange,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w700),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 10,
+                  SizedBox(height: 8,) , 
+                  Card(
+                    color: Color.fromARGB(255, 24, 21, 21),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30)),
+                    elevation: 40,
+                    child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Grid( name: 'team' )),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Center(
+                    child: Text(
+                      "रंगवर्धन २०२१-२२",
+                      style: TextStyle( fontFamily: "TiroDevanagariSanskrit",
+                          color: Colors.orange,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w700),
                     ),
-                    Center(
-                      child: Text(
-                        "रंगवर्धन २०२२-२३",
-                        style: TextStyle(
-                            color: Colors.orange,
-                            fontSize: 28,
-                            fontWeight: FontWeight.w700),
-                      ),
-                    ),
-                    Card(
+                  ),
+                  Card(
                       color: Color.fromARGB(255, 24, 21, 21),
                       shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        elevation: 40,
+                          borderRadius: BorderRadius.circular(30)),
+                      elevation: 40,
                       child: Padding(
                           padding: const EdgeInsets.all(10.0),
-                          child: Grid(
-                            Titles: name2023,
-                            Position: position2023,
-                            year: 'team2023',
-                            image_name: image2023 , 
-                          )),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Center(
-                      child: Text(
-                        "रंगवर्धन २०२१-२२",
-                        style: TextStyle(
-                            color: Colors.orange,
-                            fontSize: 28,
-                            fontWeight: FontWeight.w700),
-                      ),
-                    ),
-                    Card(
-                        color: Color.fromARGB(255, 24, 21, 21),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        elevation: 40,
-                        child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Grid(
-                            Titles: name2022,
-                            Position: position2022,
-                            year: 'team_2022',
-                            image_name: image2022 , 
-                          ))),
-                    SizedBox(
-                      height: 10,
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
+                          child:Grid( name: 'team_2022' ))),
+                  SizedBox(
+                    height: 10,
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

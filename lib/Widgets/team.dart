@@ -2,32 +2,21 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
-class natya extends StatefulWidget {
-   
-  natya({
-    Key? key,
+class Grid extends StatelessWidget {
+  String name;
 
-   
+  Grid({
+    Key? key,
+    required this.name,
   }) : super(key: key);
 
-  @override
-  State<natya> createState() => _GridState();
-}
-
-class _GridState extends State<natya> {
   FirebaseFirestore db = FirebaseFirestore.instance;
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: db
-          .collection("natyawardhan_images")
-         
-          .snapshots(),
+      stream:
+          db.collection(name).orderBy("rank", descending: false).snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return Center(child: CircularProgressIndicator());
@@ -40,10 +29,10 @@ class _GridState extends State<natya> {
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,
+                crossAxisSpacing: 0,
+                mainAxisSpacing:5 ,
                 mainAxisExtent: 170),
-            itemCount:  Value.length,
+            itemCount: Value.length,
             itemBuilder: (BuildContext context, int index) {
               return Container(
                 child: Column(
@@ -51,8 +40,8 @@ class _GridState extends State<natya> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      height: 130,
-                      width: 130,
+                      height: 120,
+                      width: 120,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         border: Border.all(width: 3, color: Colors.white),
@@ -68,19 +57,23 @@ class _GridState extends State<natya> {
                     SizedBox(
                       height: 3.0,
                     ),
-                    Center(
-                      child: Text(
-                        
-                        Value[index]["name"],
-                          textAlign: TextAlign.center,
-                        style: TextStyle(
-                             
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
-                      ),
+                    Text(
+                      Value[index]["name"],
+                      style: TextStyle(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white),
                     ),
-                   
+                    Text(
+                      Value[index]["position"],
+                      style: TextStyle(
+                          fontSize: 11.0,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.grey.shade300),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    )
                   ],
                 ),
               );

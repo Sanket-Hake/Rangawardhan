@@ -5,20 +5,18 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rangawardhan/Drawer/Events.dart';
-import 'package:rangawardhan/Home/slider.dart';
+import 'package:rangawardhan/Widgets/slider.dart';
 import 'package:readmore/readmore.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../Drawer/Drawer.dart';
 import '../Drawer/Team.dart';
-import '../Widgets/grid1.dart';
+
 import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-import '../Drawer/n_main.dart';
+import '../Drawer/natyawardhana.dart';
 import 'main_home.dart';
-
-// import 'package:google_language_fonts/google_language_fonts.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -38,6 +36,24 @@ class _HomeState extends State<Home> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          elevation: 30,
+          centerTitle: true,
+          title: Image(
+            image: AssetImage("assets/Images/rangawardhan.png"),
+            height: 250,
+            width: 250,
+          ),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(30),
+              bottomRight: Radius.circular(30),
+            ),
+          ),
+        ),
+        drawer: MainDrawer(),
+        backgroundColor: Colors.black,
         body: screens[page],
         bottomNavigationBar: Container(
           decoration: const BoxDecoration(
@@ -50,34 +66,37 @@ class _HomeState extends State<Home> {
           child: CurvedNavigationBar(
             index: page,
             color: Colors.black,
-            // buttonBackgroundColor: Color.fromARGB(255, 210, 205, 205),
-            backgroundColor: Colors.red,
+            buttonBackgroundColor: Color.fromARGB(255, 244, 242, 242),
+            backgroundColor: Colors.transparent , 
             height: 60,
             items: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: FaIcon(
                   FontAwesomeIcons.home,
-                  color: Colors.orange,
+                  color: (page == 0)
+                  ?  Colors.red
+                  : Colors.orange,
                 ),
               ),
               Icon(
                 Icons.event,
                 size: 30,
-                color: Colors.orange,
+                 color: (page == 1)
+                  ?  Colors.red
+                  : Colors.orange,
               ),
-              // ImageIcon(
-              //   AssetImage("assets/Images/event.png"),
-              //   color: Colors.orange,
-              // ),
-          
               FaIcon(
                 FontAwesomeIcons.userFriends,
-                color: Colors.orange,
+                 color: (page == 2)
+                  ?  Colors.red
+                  : Colors.orange,
               ),
               Icon(
                 FontAwesomeIcons.theaterMasks,
-                color: Colors.orange,
+                  color: (page == 3)
+                  ?  Colors.red
+                  : Colors.orange,
               )
             ],
             onTap: (value) => setState(() {

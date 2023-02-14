@@ -1,9 +1,9 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:rangawardhan/Home/home_page.dart';
-import 'package:rangawardhan/Widgets/eventlist.dart';
-
-import '../Widgets/grid.dart';
-import '../Widgets/rangawardhan.dart';
+import '../Widgets/team.dart';
+import '../Widgets/appBar.dart';
+import '../Widgets/imageList.dart';
 
 class ranagaEvent extends StatelessWidget {
   // Events({super.key});
@@ -17,73 +17,93 @@ class ranagaEvent extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 18, 18, 18),
+        backgroundColor: Colors.black,
         body: SingleChildScrollView(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             customAppBar(),
-            Center(
-              child: Text(
-                "रंगवर्धन: आवाज मराठी मनाचा !",
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
             Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10),
+              padding: EdgeInsets.all(16),
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  Center(
                     child: Text(
-                      "Upcoming Events",
+                      "रंगवर्धन: आवाज मराठी मनाचा !",
                       style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.orange,
-                          fontWeight: FontWeight.bold),
+                         fontFamily: "TiroDevanagariSanskrit",
+                        color: Colors.red,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
-                  eventList(
-                    name: 'upcominEvents',
-                    folder: 'events',
+                  SizedBox(height: 16),
+                  Text(
+                    "Upcoming Events",
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.orange,
+                        fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
-                    height: 10,
+                  SizedBox(height: 8),
+                  Container(
+                    height: 200,
+                    width: double.infinity,
+                    child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: listView(
+                            name: "events",
+                            extent:150,
+                            keys: "tense",
+                            values: "upcoming")),
                   ),
+                  SizedBox(height: 16),
                   Text(
                     "Recent Events",
                     style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 18,
                         color: Colors.orange,
                         fontWeight: FontWeight.bold),
                   ),
+
                   SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
-                  eventList(
-                    name: 'recentEvents',
-                    Titles: Titles,
-                    folder: 'events',
+                  Container(
+                    height: 165,
+                    width: double.infinity,
+                    child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: listView(
+                            name: "events",
+                            extent: 150,
+                            keys: "tense",
+                            values: "recent")),
                   ),
-                  Text(
-                    "Past Events",
-                    style: TextStyle(
-                        fontSize: 22,
-                        color: Colors.orange,
-                        fontWeight: FontWeight.bold),
-                  ),
+                  // SizedBox(height: 16),
+                  // Text(
+                  //   "Past Events",
+                  //   style: TextStyle(
+                  //       fontSize: 18,
+                  //       color: Colors.orange,
+                  //       fontWeight: FontWeight.bold),
+                  // ),
                   SizedBox(
-                    height: 10,
+                    height: 8,
                   ),
-                  eventList(name: 'pastEvents', folder: 'events'),
+                  // Container(
+                  //         height: 200,
+                  //         width: double.infinity,
+                  //         child: Padding(
+                  //             padding: const EdgeInsets.all(5.0),
+                  //             child: listView(
+                  //                 name: "events",
+                  //                 extent: 140,
+                  //                 keys: "tense",
+                  //                 values: "past")),
+                  //       ),
                 ],
               ),
             ),

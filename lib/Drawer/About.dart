@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:rangawardhan/Widgets/appBar.dart';
 import 'package:readmore/readmore.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -26,150 +27,127 @@ class About extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  height: MediaQuery.of(context).size.width * 0.6,
-                  width: double.infinity,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("assets/Images/VJTI_Mumbai.jpeg"),
-                        fit: BoxFit.cover),
-                  ),
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Image(
-                      image: AssetImage(
-                        "assets/Images/rangwardhan.png",
-                      ),
+               customAppBar() , 
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Container(
+                  
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                       
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Center(
+                          child: Text(
+                            "About the Committee",
+                            style: const TextStyle(
+                                color: Colors.orange , 
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Card(
+                          color: Color.fromARGB(255, 36, 35, 35),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30)),
+                          elevation: 40,
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: ReadMoreText(
+                              Content,
+                              textAlign: TextAlign.justify,
+                              trimLines: 13,
+                              colorClickableText:
+                                  Color.fromARGB(255, 231, 200, 154),
+                              trimMode: TrimMode.Line,
+                              trimCollapsedText: ' Show more',
+                              trimExpandedText: ' Show less',
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight:FontWeight.w500,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                            flex: 1,
+                            child: FaIcon(FontAwesomeIcons.locationDot , color: Colors.white) ,), 
+                            Expanded(
+                              flex: 20,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                 
+                                  Center(
+                                    child: Text(
+                                      " H R Mahajani Rd, Matunga",
+                                      style: const TextStyle(
+                                          color: Colors.orange ,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 16),
+                                    ),
+                                  ),
+                                  Center(
+                                    child: Text(
+                                      "Mumbai, Maharashtra 400019",
+                                      style: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 16),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                           Expanded(
+                            flex: 2,
+                            child: FaIcon(FontAwesomeIcons.message , color: Colors.white) ,), 
+                            Expanded(
+                              flex: 10,
+                              child: Text(
+                                "rangawardhanfest@gmail.com",
+                                style: const TextStyle(
+                                 color: Colors.orange ,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 16),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Center(
-                        child: Text(
-                          "  मराठी अस्मितेची मराठी शान,\n मराठी परंपरेचा मराठी अभिमान,\nमराठी संस्कृतीचा मराठी अभिमान,",
-                          style: TextStyle(fontSize:17 , color: Colors.white , fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Center(
-                        child: Text(
-                          "About the Committee",
-                          style: const TextStyle(
-                              color: Colors.orange , 
-                              fontWeight: FontWeight.w600,
-                              fontSize: 22),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Card(
-                        color: Color.fromARGB(255, 36, 35, 35),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        elevation: 40,
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: ReadMoreText(
-                            Content,
-                            textAlign: TextAlign.justify,
-                            trimLines: 9,
-                            colorClickableText:
-                                Color.fromARGB(255, 231, 200, 154),
-                            trimMode: TrimMode.Line,
-                            trimCollapsedText: ' Show more',
-                            trimExpandedText: ' Show less',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight:FontWeight.w500,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                          flex: 1,
-                          child: FaIcon(FontAwesomeIcons.locationDot , color: Colors.white) ,), 
-                          Expanded(
-                            flex: 20,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                               
-                                Center(
-                                  child: Text(
-                                    " H R Mahajani Rd, Matunga",
-                                    style: const TextStyle(
-                                        color: Colors.orange ,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 17),
-                                  ),
-                                ),
-                                Center(
-                                  child: Text(
-                                    "Mumbai, Maharashtra 400019",
-                                    style: const TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 17),
-                                  ),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                         Expanded(
-                          flex: 2,
-                          child: FaIcon(FontAwesomeIcons.message , color: Colors.white) ,), 
-                          Expanded(
-                            flex: 10,
-                            child: Text(
-                              "rangawardhanfest@gmail.com",
-                              style: const TextStyle(
-                               color: Colors.orange ,
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 17),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
+              
                 Card(
-                  color: Color.fromARGB(255, 36, 35, 35),
+                     color: Color.fromARGB(255, 36, 35, 35),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       IconButton(
                           icon: FaIcon(FontAwesomeIcons.twitter),
@@ -206,7 +184,7 @@ class About extends StatelessWidget {
                             final Uri _url = Uri.parse(
                                 'https://www.facebook.com/Rangawardhan');
                             _launchUrl(_url);
-
+                
                             print("Pressed");
                           }),
                       SizedBox(width: 10.0),

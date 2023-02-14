@@ -43,11 +43,11 @@ class _sliderState extends State<slider> {
                 height: double.infinity,
                 child: Card(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20)),
+                      borderRadius: BorderRadius.circular(15)),
                   elevation: 40,
                   shadowColor: Color.fromARGB(0, 216, 55, 55),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(10),
                     child: Image(
                         image: NetworkImage(widget.imageUrls[index]),
                         fit: BoxFit.cover),
